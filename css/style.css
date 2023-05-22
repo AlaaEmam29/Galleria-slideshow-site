@@ -121,7 +121,7 @@ header nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 5rem;
+  gap: 10rem;
   height: 85rem;
 }
 .row .rowContainer > * {
@@ -179,11 +179,10 @@ header nav {
   z-index: 5;
   position: absolute;
   top: 6%;
-  left: 55%;
+  left: 60%;
   background-color: #fff;
   color: #000;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 52%
 }
 .text h5 {
   margin-top: 1rem;
@@ -217,7 +216,8 @@ header nav {
 
 .col-2 {
   position: relative;
-  flex: 0 1 45%;
+  flex: 0 1 40%;
+  justify-self: flex-end;
   display: flex;
   justify-content: space-between;
   flex-direction: column;

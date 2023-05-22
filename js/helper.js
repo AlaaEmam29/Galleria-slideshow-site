@@ -15,12 +15,12 @@ getData = JSON.parse(getData)
 const fetchData = async () => {
     loading.classList.remove("hidden")
     try {
-    const response = await fetch("https://alaashaban29.github.io/data/data.json");
+    const response = await fetch("https://alaashaban29.github.io/api/data.json");
+    console.log(response)
     if (!response.ok) {
       throw new Error("Failed to fetch data");
     }
-        const {data} = await request.json()
-        console.log(data)
+        const {data} = await response.json()
         
         const fragment = document.createDocumentFragment()
         data.forEach((item) => {

@@ -15,7 +15,10 @@ getData = JSON.parse(getData)
 const fetchData = async () => {
     loading.classList.remove("hidden")
     try {
-        const request = await fetch("/data/data.json")
+    const response = await fetch("https://alaashaban29.github.io/data/data.json");
+    if (!response.ok) {
+      throw new Error("Failed to fetch data");
+    }
         const {data} = await request.json()
         console.log(data)
         

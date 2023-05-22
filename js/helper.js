@@ -1,3 +1,4 @@
+"use strict"
 const loading = document.querySelector(".loading")
 const container = document.querySelector(".container")
 const allData = []
@@ -14,8 +15,8 @@ getData = JSON.parse(getData)
 const fetchData = async () => {
     loading.classList.remove("hidden")
     try {
-        const request = await fetch("http://localhost:3000/data")
-        const data = await request.json()
+        const request = await fetch("/data/data.json")
+        const {data} = await request.json()
         console.log(data)
         
         const fragment = document.createDocumentFragment()

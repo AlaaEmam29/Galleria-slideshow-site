@@ -1,3 +1,5 @@
+"use strict"
+
 fetchData()
 function displayAllData(data) {
     const a = document.createElement("a")

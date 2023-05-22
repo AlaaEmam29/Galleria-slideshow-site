@@ -1,0 +1,499 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Nunito+Sans:wght@300&family=Outfit:wght@400;700&family=Plus+Jakarta+Sans:ital,wght@0,500;0,800;1,500;1,800&display=swap");
+:root {
+  --black: #000;
+  --gray: #7d7d7d;
+  --light-gray: #e6e6e6;
+  --very-light-gray: #f2f2f2;
+  --white: #fff;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 1.6rem;
+  background-color: var(--white);
+  color: var(--gray);
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: var(--gray);
+  letter-spacing: 0.1rem;
+}
+
+ul {
+  list-style: none;
+}
+
+header nav {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.container {
+  width: 90%;
+  max-width: 160rem;
+  margin: auto;
+  margin-top: 8rem;
+  -moz-column-count: 4;
+       column-count: 4;
+  -moz-column-gap: 4rem;
+       column-gap: 4rem;
+}
+.container .item {
+  -moz-column-break-inside: avoid;
+       break-inside: avoid;
+  padding: 1rem;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+.container .item .img {
+  position: relative;
+}
+.container .item .img img {
+  display: block;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.container .item .img .overlay {
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.container .item:hover .overlay {
+  opacity: 0.4;
+  background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);
+}
+.container .item .info {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 5%;
+  z-index: 5;
+  gap: 7px;
+  color: var(--light-gray);
+}
+.container .item .info > * {
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #000;
+  letter-spacing: 0.2rem;
+  font-size: 2.5rem;
+}
+
+.row {
+  display: flex;
+  max-width: 90%;
+  margin: 4rem auto;
+  flex-direction: column;
+  gap: 2rem;
+}
+.row .rowContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5rem;
+  height: 85rem;
+}
+.row .rowContainer > * {
+  height: 100%;
+}
+.row .footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.row .footer .toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+}
+.row .footer .toggle button {
+  all: unset;
+  cursor: pointer;
+}
+.row .footer .toggle button:disabled {
+  cursor: not-allowed;
+  opacity: 0.2;
+}
+.row .footer .toggle svg {
+  width: 3rem;
+  height: 3rem;
+}
+.row .footer .info {
+  color: #000;
+}
+.row .footer .info h2 {
+  margin-bottom: 1rem;
+}
+.row .footer .info h5 {
+  color: var(--gray);
+}
+.row .bar {
+  height: 3px;
+}
+
+.col-2 {
+  justify-content: flex-end;
+}
+
+.col {
+  position: relative;
+  flex: 0 1 55%;
+  display: flex;
+  flex-direction: column;
+}
+
+.text {
+  padding: 4rem 8rem;
+  z-index: 5;
+  position: absolute;
+  top: 6%;
+  left: 55%;
+  background-color: #fff;
+  color: #000;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.text h5 {
+  margin-top: 1rem;
+}
+.text h2 {
+  width: 100%;
+  font-size: 3.5rem;
+  line-height: 1.2;
+  font-weight: bold;
+}
+
+.imgs-col {
+  width: 100%;
+  position: relative;
+}
+.imgs-col .large {
+  width: 95%;
+  height: 95%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  transform: scale(0.85);
+}
+
+.artist {
+  text-align: end;
+  bottom: 0%;
+  left: 100%;
+  position: absolute;
+}
+
+.col-2 {
+  position: relative;
+  flex: 0 1 45%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.col-2 .year span {
+  font-family: "Schoolbell", cursive;
+  font-size: 25rem;
+  opacity: 0.5;
+}
+.col-2 .desc {
+  position: absolute;
+  z-index: 1;
+  top: 22%;
+  width: inherit;
+}
+.col-2 .desc p {
+  line-height: 1.8;
+  font-size: 2rem;
+  letter-spacing: 0.05rem;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.link {
+  text-align: end;
+  padding: 2rem;
+  text-decoration: underline;
+  bottom: 25%;
+  position: absolute;
+  right: 0;
+}
+.link a {
+  letter-spacing: 0.3rem;
+}
+
+.show, .close {
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 2rem 3rem;
+  gap: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.32s ease-in-out;
+}
+.show:hover, .close:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.show {
+  position: absolute;
+  bottom: 15%;
+  left: 10%;
+}
+.show img {
+  width: 2rem;
+  height: 2rem;
+}
+
+.warpper {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  -webkit-backdrop-filter: blur(1rem);
+          backdrop-filter: blur(1rem);
+}
+
+.overlayImg {
+  position: fixed;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.overlayImg h5 {
+  letter-spacing: 0.2rem;
+  font-size: 1.7rem;
+}
+.overlayImg img {
+  width: 100%;
+  max-height: 50rem;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Media queries using em units for specific device widths */
+@media (max-width: 40em) {
+  .text {
+    width: 50% !important;
+  }
+}
+@media (max-width: 64em) {
+  /* Styles for mobile devices */
+  html {
+    font-size: 50%;
+  }
+  .container {
+    -moz-column-count: 1;
+         column-count: 1;
+  }
+  .row {
+    display: flex;
+    flex-direction: column;
+  }
+  .row .rowContainer {
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    height: 100%;
+    gap: 0;
+  }
+  .row .rowContainer > * {
+    flex: 1 0 100%;
+    width: 100%;
+  }
+  .text {
+    padding: 1rem 3rem;
+    left: 0;
+    top: 75%;
+  }
+  .show {
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 1rem 1.5rem;
+    left: 6%;
+    top: 10%;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .col .imgs-col .large {
+    width: 100%;
+  }
+  .col-2 {
+    position: relative;
+    height: 100%;
+  }
+  .desc {
+    top: 10% !important;
+  }
+  .link {
+    right: 0;
+    bottom: -5%;
+  }
+  .year {
+    text-align: end;
+  }
+  .text {
+    width: 75% !important;
+    padding: 2rem 3rem;
+    left: 7%;
+    top: 71%;
+  }
+  .artist {
+    transform: scale(0.7);
+    position: relative;
+    left: -15%;
+    text-align: start;
+  }
+  .show {
+    left: 8%;
+  }
+}
+@media (min-width: 40.063em) and (max-width: 64em) {
+  /* Styles for tablets */
+  .row {
+    display: flex;
+    flex-direction: column;
+  }
+  .row .rowContainer {
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    height: 100%;
+    width: 100%;
+    gap: 0;
+  }
+  .row .rowContainer > * {
+    flex: 1 0 100%;
+    width: 100%;
+  }
+  .container {
+    -moz-column-count: 2;
+         column-count: 2;
+  }
+  .col {
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+  }
+  .artist {
+    justify-self: flex-start;
+    position: relative;
+    top: 50%;
+    left: 1%;
+    transform: translateY(-50%);
+    transform: scale(1);
+  }
+  .show {
+    padding: 2rem 2.5rem;
+    left: 8%;
+    top: 82%;
+  }
+  .text {
+    width: 40% !important;
+    padding: 3rem 3.5rem;
+    left: 45%;
+    top: 7%;
+  }
+  .link {
+    bottom: 0%;
+  }
+  .year span {
+    font-size: 18rem !important;
+  }
+  .imgs-col {
+    width: 100%;
+  }
+  .imgs-col .large {
+    width: 100%;
+    height: 100%;
+  }
+}
+@media (min-width: 64em) and (max-width: 90em) {
+  html {
+    font-size: 50%;
+  }
+  .text {
+    padding: 4.5rem 7.5rem;
+    top: 7%;
+    left: 50%;
+  }
+  .text h2 {
+    font-size: 6rem;
+  }
+  .link {
+    position: absolute;
+    top: 1% !important;
+    right: 1%;
+  }
+}
+@media (min-width: 64em) and (max-width: 84em) {
+  .large {
+    width: 100% !important;
+    height: 100% !important;
+    -o-object-fit: cover;
+       object-fit: cover;
+    display: block;
+  }
+  .artist {
+    transform: scale(0.65);
+    bottom: -4%;
+    left: 94%;
+  }
+  .row {
+    display: flex;
+    flex-direction: column;
+  }
+  .row .rowContainer {
+    height: 90rem;
+    gap: 10rem;
+  }
+  .desc {
+    top: 20% !important;
+  }
+}/*# sourceMappingURL=style.css.map */

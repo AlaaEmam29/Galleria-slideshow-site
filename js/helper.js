@@ -5,22 +5,19 @@ const allData = []
 const row = document.querySelector(".row")
 
 let id = localStorage.getItem("gallery")
-let getData = localStorage.getItem("data")
+let getData = JSON.parse(localStorage.getItem("data"))
 const indexHtm = () => location.replace("index.html")
-if (!id && !getData) {
-indexHtm()
-}
-getData = JSON.parse(getData)
+
 
 const fetchData = async () => {
     loading.classList.remove("hidden")
     try {
-    const response = await fetch("https://alaashaban29.github.io/api/data.json");
-    console.log(response)
+    const response = await fetch("data.json");
     if (!response.ok) {
-      throw new Error("Failed to fetch data");
+        throw new Error("Failed to fetch data");
     }
-        const {data} = await response.json()
+    const {data} = await response.json()
+    console.log(response , data)
         
         const fragment = document.createDocumentFragment()
         data.forEach((item) => {

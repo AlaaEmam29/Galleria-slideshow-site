@@ -13,8 +13,6 @@ function displayAllData(data) {
     <img src='${data.images.thumbnail}' alt='${data.name}'> 
     <div class='overlay'>     </div>
     </div>
-
-
         <div class='info'>
     <h3>${data.artist.name} </h3>
     <p>${data.name}</p>
